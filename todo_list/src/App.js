@@ -1,12 +1,12 @@
+import React from 'react'
+import TodoList from './todoList'
 import './App.css';
-import RollDice from './rollDice'
-
+ 
 
 function App() {
   return (
     <div className="App">
-      <h1> The rolling of the dice </h1>
-      <RollDice />
+      <TodoList />
     </div>
   );
 }
