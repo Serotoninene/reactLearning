@@ -1,0 +1,8 @@
+@import './design-tokens';
+
+.Todo{
+    background-color: $dark;
+    height: 50px;
+    border-bottom: 1px solid $veryDark;
+    align-items: center;
+}

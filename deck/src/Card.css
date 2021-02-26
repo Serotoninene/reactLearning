@@ -1,0 +1,13 @@
+.Card{
+    position : relative;
+}
+:root {
+    --random_rotation : 5;
+}
+
+.Card img {
+    position: absolute;
+    top : 50vh;
+    left: 51vw;
+    transform: translate(-50%, -50%) rotate(5deg);
+}

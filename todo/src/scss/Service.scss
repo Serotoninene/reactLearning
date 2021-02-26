@@ -1,0 +1,42 @@
+@import 'design-tokens';
+
+// SET-UP
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+// USEFUL FUNCTIONS
+.flex{
+    display: flex;
+}
+
+.relative{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+}
+
+.border{
+    border: red 1px solid;
+}
+
+.row{
+    display: grid;
+    grid-template-columns: repeat(12,1fr) ;
+}
+
+.resp{
+    width: 100%;
+}
+
+.container{
+    width: 40%;
+    margin: 0 auto;
+}
+

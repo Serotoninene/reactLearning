@@ -1,0 +1,11 @@
+@import './design-tokens';
+
+.Form{
+    background-color: $dark;
+    height: 50px;
+    align-items: center;
+}
+
+.checkbox{
+    border-radius: 50%;
+}
