@@ -1,0 +1,9 @@
+.activeStyle{
+    font-weight: 700;
+    color: lightcoral;
+}
+
+.NavLink{
+    color: darkslategray;
+    text-decoration: none;
+}
