@@ -1,0 +1,59 @@
+/* AGENCEMENT DE LA NAVBAR */
+.Navbar{
+    display: flex;
+    height: 7%;
+}
+
+.Navbar-logo{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eceff1;
+    font-family: Roboto;
+}
+
+.Navbar-logo a {
+    text-decoration: none;
+    color: black;
+}
+
+.Navbar .slider-container{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+
+
+/* SLIDER STYLE */
+.slider{
+    width: 340px;
+    margin: 0 10px;
+    display : inline-block 
+}
+
+/* les 3 classes ci-dessous sont données par la documentation du module, elles ne sont pas dans mon jsx */
+.rc-slider-track{
+    background-color: transparent;
+}
+
+.rc-slider-rail{
+    height: 8px;
+}
+
+/* si on ne sélectionne pas tous les états du slider, on peut avoir des petits changement de style en fonction du moment 
+(ex : lorsque focus, l'outline bleu réapparait)  */
+.rc-slider-handle,
+.rc-slider-handle:active,
+.rc-slider-handle:hover,
+.rc-slider-handle:focus{
+    background-color : green;
+    outline : none; 
+    border : 2px solid green; 
+    width : 13px;
+    height: 13px;
+    margin-left: -7px;
+    margin-top: -3px;
+}
+
