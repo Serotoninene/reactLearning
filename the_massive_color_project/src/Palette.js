@@ -2,7 +2,9 @@
 import React, { Component } from 'react'
 import ColorBox from './ColorBox'
 import Navbar from './Navbar'
-import Snackbar from '@material-ui/core/Snackbar';
+import PaletteFooter from './PaletteFooter'
+
+import Snackbar from '@material-ui/core/Snackbar'
 import IconButton from '@material-ui/core/IconButton'
 import CloseIcon  from '@material-ui/icons/Close'
 
@@ -40,21 +42,33 @@ class Palette extends Component {
     }
 
     render(){
-        const { colors, paletteName, emoji } = this.props.palette
+        const { colors, paletteName, emoji, id } = this.props.palette
         const { level, format } = this.state
 
         const colorBoxes = colors[level].map( (color,idx) => (
-           <ColorBox background = {color[format]} name = {color.name} key = {idx}  />
+           <ColorBox 
+            background = {color[format]} 
+            name = {color.name} 
+            key = {idx} 
+            paletteId = {id} 
+            colorId = {color.id} 
+            showMore = { true }
+            />
         ) )
 
         return (
             <div className = "Palette">
-                <Navbar level = {level} changeLevel = {this.changeLevel} handleChange = {this.changeFormat} />
+                <Navbar 
+                    level = {level} 
+                    changeLevel = {this.changeLevel} 
+                    handleChange = {this.changeFormat} 
+                    showingAllColors = { true }
+                    />
                 <div className = "Palette-colors"> 
                     {colorBoxes}
                 </div>
                 <footer className = "Palette-footer">
-                    <p> {paletteName} <span> {emoji} </span> </p>
+                    <PaletteFooter paletteName = {paletteName} emoji = {emoji} />
                 </footer>
                 <Snackbar 
                     anchorOrigin = {{vertical: "bottom", horizontal: "left"}}

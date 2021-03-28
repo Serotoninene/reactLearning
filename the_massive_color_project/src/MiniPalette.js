@@ -42,19 +42,18 @@ const styles = {
 }
 
 function MiniPalette(props){
-    const { classes, paletteName, emoji } = props
-    const colorBoxes = props.colors.map( (color, idx) => {
-        console.log(color)
-        return (
-                <div
-                    key = {idx} 
-                    className = {classes.colorBox} 
-                    style = {{backgroundColor: `${color.color}`}}> 
-                </div>
+    const { classes, paletteName, emoji, handleClick } = props
+    const colorBoxes = props.colors.map( (color, idx) => (
+            <div
+                key = {idx} 
+                className = {classes.colorBox} 
+                style = {{backgroundColor: `${color.color}`}}> 
+            </div>
         )
-    })
+    )
+
     return (
-        <div className = {classes.main}> 
+        <div className = {classes.main} onClick = {handleClick}> 
             <div className = {`${classes.colors} MiniPalette-colors`}>
                 {colorBoxes}
             </div>

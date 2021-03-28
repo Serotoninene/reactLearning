@@ -33,15 +33,19 @@ class PaletteList extends Component {
     constructor(props){
         super(props)
         this.state = {}
+        this.goToPalette = this.goToPalette.bind(this)
     }
 
-    
+    goToPalette(id){
+        this.props.history.push(`/palette/${id}`);
+    }
 
-    render(){
-       
+    render(){       
         const { classes } = this.props
         const paletteList = this.props.palettes.map((e, idx) => (
-            <div className = {classes.palette} key= {idx} > <MiniPalette {...e} /> </div>
+            <div className = {classes.palette} key= {idx}> 
+                <MiniPalette {...e} handleClick = {() => this.goToPalette(e.id)} /> 
+                </div>
         ))
 
         console.log(classes)

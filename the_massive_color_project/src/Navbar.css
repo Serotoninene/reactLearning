@@ -27,8 +27,12 @@
 
 .Navbar-container{
     display: flex;
-    justify-content: space-between;
     width: 100%;
+}
+
+/* MENU STYLE */
+.Navbar-menu{
+    margin-left: auto;
 }
 
 /* SLIDER STYLE */
