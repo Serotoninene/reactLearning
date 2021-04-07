@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { withStyles } from '@material-ui/styles'
 
 import Navbar from './Navbar'
 import ColorBox from './ColorBox'
@@ -8,6 +9,16 @@ import PaletteFooter from './PaletteFooter'
 import './ColorBox.css'
 import './SingleColorPalette.css'
 
+
+const styles = {
+    SingleColorPalette : {
+        height: '89vh',
+        width: '100vw',
+        "&ColorBox" : {
+            height: '50%'
+        }
+    }
+}
 
 class SingleColorPalette extends Component{
     constructor(props){
@@ -40,6 +51,8 @@ class SingleColorPalette extends Component{
     render(){
         const { format } = this.state
         const { paletteName, emoji, id } = this.props.palette
+        const { classes } = this.props
+        console.log(classes)
         const colorBoxes = this._shades.map( (color, idx) => (
             <ColorBox 
                 background = {`${color[format]}`} 
@@ -50,7 +63,7 @@ class SingleColorPalette extends Component{
         ))
 
         return (
-            <div className = "SingleColorPalette">  
+            <div className = {classes.SingleColorPalette}>  
                 <Navbar
                     handleChange = {this.changeFormat}
                     showingAllColors = { false }
@@ -69,4 +82,4 @@ class SingleColorPalette extends Component{
     }
 }
 
-export default SingleColorPalette
+export default withStyles(styles)(SingleColorPalette)

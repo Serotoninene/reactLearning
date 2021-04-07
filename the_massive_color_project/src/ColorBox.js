@@ -8,20 +8,52 @@ import chroma from 'chroma-js'
 import './ColorBox.css'
 
 const styles = {
+    ColorBox : {
+        width: '20%',
+        height: props => props.showMore ? '25%' : '50%',
+        margin: '0 auto',
+        position: 'relative',
+        display: 'inline-block',
+        cursor: 'pointer',
+        marginBottom: '-3px', 
+        '&:hover' : {
+            backgroundColor : 'black'
+        }
+    },
+    
     copiedMessage : {
         color: props => (chroma(props.background).luminance() >= 0.67 ? "rgba(0,0,0,0.6)" : "white"),
     }, 
     copyButton : {
         color: props => (chroma(props.background).luminance() >= 0.67 ? "rgba(0,0,0,0.6)" : "white"),
+        // width: '100px',
+        // height: '30px',
+        // position: 'absolute',
+        // left: '50%',
+        // top: '50%',
+        // transform: 'translate(-50%, -50%)',
+        // display: 'inline-block',
+        // outline: 'none',
+        // background: 'rgba(255,255,255,0.3)',
+        // fontSize: '1rem',
+        // lineHeight: '30px',
+        // textTransform: 'uppercase',
+        // border: 'none',
+        // cursor: 'pointer',
+        // textAlign: 'center',
+        // opacity: '0',
     },
+
+
+
+
+
     moreButton : {
         color: props => (chroma(props.background).luminance() >= 0.67 ? "rgba(0,0,0,0.6)" : "white"),
     },
     colorName : {
         color : props => (chroma(props.background).luminance() <= 0.08 ? "white" : "black")
-    }
-
-
+    },
 }
 
 class ColorBox extends Component {
@@ -46,7 +78,7 @@ class ColorBox extends Component {
 
         return (
             <CopyToClipboard text = {background} onCopy = {this.changeCopyState}>
-                <div className = {`ColorBox`} style = {{backgroundColor : background}}>
+                <div className = {`${classes.ColorBox} ColorBox`} style = {{backgroundColor : background}}>
                 <div className = {`copy-overlay ${copied && "show"}`} style = {{backgroundColor : background}}></div>
                 <div className = {`copy-msg ${copied && "show"} ${classes.copiedMessage}`}>
                     <h1> copied! </h1>

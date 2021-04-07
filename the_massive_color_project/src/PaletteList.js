@@ -10,6 +10,16 @@ const styles = {
         height : '100vw'
     },
 
+    navbar : {
+        display: 'flex',
+        justifyContent : 'space-between',
+        alignItems : 'center',
+        color : 'white',
+        "& a" : {
+            color: 'white'
+        }
+    },
+
     main : {
         display : 'flex',
         flexDirection : 'column',
@@ -53,7 +63,10 @@ class PaletteList extends Component {
         return (
             <div className = {classes.root}>
                 <div className = {classes.main}>
-                    <h1> React Colors </h1>
+                    <div className = {classes.navbar}>
+                        <h1> React Colors </h1>
+                        <Link to = "/palette/new"> Create a New Palette</Link>
+                    </div>
                     <div className = {classes.paletteList}> 
                         {paletteList}
                     </div>

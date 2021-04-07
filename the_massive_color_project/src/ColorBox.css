@@ -1,4 +1,4 @@
-.ColorBox{
+/* .ColorBox{
     width: 20%;
     height: 25%;
     margin: 0 auto;
@@ -6,19 +6,19 @@
     display: inline-block;
     cursor: pointer;
     margin-bottom: -3px;
-}
+} */
 
-.lightText{
+/* .lightText{
     color: white;
-}
+} */
 
-.ColorBox .darkText{
+/* .ColorBox .darkText{
     color: rgba(0,0,0,0.6);
-}
+} */
 
-.SingleColorPalette .ColorBox{ 
+/* .SingleColorPalette .ColorBox{ 
     height: 50%;
-}
+} */
 
 .ColorBox.goBack{
     background-color: black;
