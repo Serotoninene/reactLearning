@@ -17,7 +17,16 @@ const styles = {
         "&ColorBox" : {
             height: '50%'
         }
-    }
+    },
+    // goBack : {
+    //     border : '1px solid red',
+    //     height : '50%',
+    //     width : '20%,',
+    //     display : 'inline',
+    //     border : 'solid blue 1px',
+    //     background: 'red'    
+    // }
+
 }
 
 class SingleColorPalette extends Component{
@@ -69,7 +78,7 @@ class SingleColorPalette extends Component{
                     showingAllColors = { false }
                 />
                 {colorBoxes}
-                <div className = "goBack ColorBox">
+                <div className = {`ColorBox ${classes.goBack}`}>
                     <Link to = {`/palette/${id}`} className = "goBack-button">Go Back</Link>
                 </div>
 

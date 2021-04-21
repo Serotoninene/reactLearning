@@ -4,10 +4,14 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import {withStyles} from '@material-ui/styles'
 
+import bg from './bg.svg'
+
 const styles = {
     root : {
         backgroundColor : 'blue',
-        height : '100vw'
+        backgroundImage : `url(${bg})`,
+        backgroundSize : 'cover',
+        height : '100vh',
     },
 
     navbar : {

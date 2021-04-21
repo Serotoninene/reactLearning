@@ -6,6 +6,7 @@ import {withStyles} from '@material-ui/styles'
 import chroma from 'chroma-js'
 
 import './ColorBox.css'
+import sizes from './sizes'
 
 const styles = {
     ColorBox : {
@@ -18,8 +19,22 @@ const styles = {
         marginBottom: '-3px', 
         '&:hover' : {
             backgroundColor : 'black'
-        }
+        },
+        [sizes.down('lg')] : {
+            width : '25%', 
+            height: props => props.showMore ? '20%' : '50%',
+        },            
+        [sizes.down('md')] : {
+            width : '50%', 
+            height: props => props.showMore ? '10%' : '50%',
+        },            
+        [sizes.down('xs')] : {
+            width : '100%', 
+            height: props => props.showMore ? '5%' : '10%',
+        }            
+        
     },
+
     
     copiedMessage : {
         color: props => (chroma(props.background).luminance() >= 0.67 ? "rgba(0,0,0,0.6)" : "white"),
